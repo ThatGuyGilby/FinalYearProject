@@ -45,10 +45,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            FindObjectOfType<NemesisMap>().GenerateNewMap();
-        }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
@@ -120,6 +116,8 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
+        nr.data = nemesisData;
+
         Random.state = prevState;
 
         return nemesis;
@@ -155,9 +153,16 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
+        nr.data = data;
+
         Random.state = prevState;
 
         return nemesis;
+    }
+
+    public void GenerateNewMap()
+    {
+        FindObjectOfType<NemesisMap>().GenerateNewMap();
     }
 
     public void PurgeNemesisSystem()
@@ -190,47 +195,5 @@ public class GameManager : MonoBehaviour
 
             system = data;
         }
-    }
-}
-
-[System.Serializable]
-public class NemesisData
-{
-    public int PID;
-    public int gender;
-
-    public NemesisData()
-    {
-        PID = Random.Range(-2147483647, 2147483647);
-        gender = Random.Range(0, 2);
-    }
-}
-
-public enum NemesisType
-{
-    Captain,
-    Warchief,
-    Overlord
-}
-
-[System.Serializable]
-public class NemesisSystem
-{
-    public List<NemesisData> captains;
-    public List<NemesisData> warchiefs;
-    public List<NemesisData> overlords;
-
-    public NemesisSystem()
-    {
-        captains = new List<NemesisData>();
-        warchiefs = new List<NemesisData>();
-        overlords = new List<NemesisData>();
-    }
-
-    public void Purge()
-    {
-        captains = new List<NemesisData>();
-        warchiefs = new List<NemesisData>();
-        overlords = new List<NemesisData>();
     }
 }

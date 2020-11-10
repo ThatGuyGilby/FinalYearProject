@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NemesisRenderer : MonoBehaviour
 {
+    public NemesisData data;
     public Transform characterRoot;
     const string namePrefix = "Set Character_";
 
@@ -124,5 +125,10 @@ public class NemesisRenderer : MonoBehaviour
         }
     }
 
-
+    private void OnMouseDown()
+    {
+        Debug.Log("AHHHHHHHHHHHHH HE FUCKING POKED ME");
+        Camera.main.GetComponent<MapCamera>().RefocusCamera(transform.parent.position + new Vector3(0.5f, 1, -2));
+        Camera.main.GetComponent<MapCamera>().focus = data;
+    }
 }

@@ -1322,6 +1322,7 @@ GameObject:
   - component: {fileID: 8960179361688442612}
   - component: {fileID: 8960179361696135444}
   - component: {fileID: 2196404084740076181}
+  - component: {fileID: 6570482565472169798}
   m_Layer: 0
   m_Name: FemaleNemesis
   m_TagString: Untagged
@@ -1379,6 +1380,19 @@ MonoBehaviour:
   characterRoot: {fileID: 0}
   rightHand: {fileID: 8960179361688734346}
   leftHand: {fileID: 8960179361688734392}
+--- !u!65 &6570482565472169798
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8960179361688734420}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &8960179361688734422
 GameObject:
   m_ObjectHideFlags: 0

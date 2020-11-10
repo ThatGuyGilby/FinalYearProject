@@ -86,6 +86,7 @@ public class NemesisMap : MonoBehaviour
         {
             GameObject nemesis = GameManager.Instance.GenerateNemesis(GameManager.Instance.system.captains[i]);
             nemesis.transform.SetParent(captains[i]);
+            nemesis.GetComponent<NemesisRenderer>().data = GameManager.Instance.system.captains[i];
 
             nemesis.transform.localPosition = Vector3.zero - new Vector3(0, 0.5f, 0);
             nemesis.transform.localRotation = Quaternion.identity;
@@ -99,6 +100,7 @@ public class NemesisMap : MonoBehaviour
         {
             GameObject nemesis = GameManager.Instance.GenerateNemesis(GameManager.Instance.system.warchiefs[i]);
             nemesis.transform.SetParent(warchiefs[i]);
+            nemesis.GetComponent<NemesisRenderer>().data = GameManager.Instance.system.warchiefs[i];
 
             nemesis.transform.localPosition = Vector3.zero - new Vector3(0, 0.5f, 0);
             nemesis.transform.localRotation = Quaternion.identity;
@@ -112,6 +114,7 @@ public class NemesisMap : MonoBehaviour
         {
             GameObject nemesis = GameManager.Instance.GenerateNemesis(GameManager.Instance.system.overlords[i]);
             nemesis.transform.SetParent(overlords[i]);
+            nemesis.GetComponent<NemesisRenderer>().data = GameManager.Instance.system.overlords[i];
 
             nemesis.transform.localPosition = Vector3.zero - new Vector3(0, 0.5f, 0);
             nemesis.transform.localRotation = Quaternion.identity;
