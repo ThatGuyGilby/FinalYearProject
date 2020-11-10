@@ -10,6 +10,8 @@ public class NemesisRenderer : MonoBehaviour
     public GameObject rightHand;
     public GameObject leftHand;
 
+    private GameObject weapon;
+
     public void AddItem(GameObject item)
     {
         GameObject itemInstance = GameObject.Instantiate(item);
@@ -28,6 +30,8 @@ public class NemesisRenderer : MonoBehaviour
         itemInstance.transform.localPosition = Vector3.zero;
         itemInstance.transform.localRotation = Quaternion.identity;
         itemInstance.transform.localScale = Vector3.one;
+
+        weapon = itemInstance;
     }
 
     public Transform GetRoot()
@@ -119,4 +123,6 @@ public class NemesisRenderer : MonoBehaviour
             DestroyImmediate(animator);
         }
     }
+
+
 }
